@@ -46,6 +46,8 @@ public abstract class BaseTest {
 
     @AfterMethod(alwaysRun = true, description = "Закрытие браузера")
     public void tearDown() {
-        driver.quit();
+        if(driver != null) {
+            driver.quit();
+        }
     }
 }
