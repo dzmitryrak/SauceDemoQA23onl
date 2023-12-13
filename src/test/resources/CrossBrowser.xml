@@ -4,7 +4,7 @@
     <listeners>
         <listener class-name="tests.TestListener"></listener>
     </listeners>
-    <test name="Chrome">
+    <test name="Firefox">
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.ProductsTest"/>
@@ -12,12 +12,20 @@
             <parameter name="user" value="standard_user"></parameter>
         </classes>
     </test> <!-- Test -->
-    <test name="Firefox">
+    <test name="Opera">
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.ProductsTest"/>
-            <parameter name="browser" value="firefox"></parameter>
-            <parameter name="user" value="performance_glitch_user"></parameter>
+            <parameter name="browser" value="edge"></parameter>
+            <parameter name="user" value="standard_user"></parameter>
+        </classes>
+    </test> <!-- Test -->
+    <test name="Chrome">
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.ProductsTest"/>
+            <parameter name="browser" value="chrome"></parameter>
+            <parameter name="user" value="standard_user"></parameter>
         </classes>
     </test> <!-- Test -->
 </suite>
