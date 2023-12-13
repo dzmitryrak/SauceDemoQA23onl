@@ -52,9 +52,9 @@ public abstract class BaseTest {
         productsPage = new ProductsPage(driver);
         cartPage = new CartPage(driver);
 
-        String user = System.getenv().getOrDefault("user", PropertyReader.getProperty("sf.user"));
+        String user = System.getProperty("user", PropertyReader.getProperty("sf.user"));
         System.out.println(user);
-        String password = System.getenv().getOrDefault("password", PropertyReader.getProperty("sf.password"));
+        String password = System.getProperty("password", PropertyReader.getProperty("sf.password"));
         System.out.println(password);
     }
 
