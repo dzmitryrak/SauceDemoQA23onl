@@ -50,6 +50,9 @@ public abstract class BaseTest {
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
         cartPage = new CartPage(driver);
+
+        System.out.println(System.getenv("user"));
+        System.out.println(System.getenv("password"));
     }
 
     @AfterMethod(alwaysRun = true, description = "Закрытие браузера")
