@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SauceDemo Smoke Test" thread-count="2" parallel="tests">
+    <listeners>
+        <listener class-name="tests.TestListener"></listener>
+    </listeners>
+    <test name="Chrome">
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.ProductsTest"/>
+            <parameter name="browser" value="chrome"></parameter>
+            <parameter name="user" value="standard_user"></parameter>
+        </classes>
+    </test> <!-- Test -->
+    <test name="Firefox">
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.ProductsTest"/>
+            <parameter name="browser" value="firefox"></parameter>
+            <parameter name="user" value="performance_glitch_user"></parameter>
+        </classes>
+    </test> <!-- Test -->
+</suite>
