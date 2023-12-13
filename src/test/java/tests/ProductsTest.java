@@ -8,18 +8,12 @@ import static org.testng.Assert.assertTrue;
 
 public class ProductsTest extends BaseTest {
 
-    @BeforeMethod
-    public void blabla() {
-        //DO SOMETHING USEFUL
-    }
-
     @Test(description = "Должна быть возможность купить продукт")
     public void buyProduct() {
         loginPage.open();
         loginPage.login("performance_glitch_user", "secret_sauce");
         productsPage.
                 addToCart("Sauce Labs Backpack").
-                addToCart("Sauce Labs jknasdljasdjkln").
                 openCart().
                 isOpened();
         assertTrue(
