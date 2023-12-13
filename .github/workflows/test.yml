@@ -18,9 +18,6 @@ jobs:
   build:
 
     runs-on: windows-latest
-    env:
-      USER: ${{ secrets.SF_USER }}
-      PASSWORD: ${{ secrets.SF_PASSWORD }}
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -38,5 +35,8 @@ jobs:
     - name: Run Tests Chrome
       run: mvn clean test
     - name: Run Tests All Browsers
+      env:
+        USER: ${{ secrets.SF_USER }}
+        PASSWORD: ${{ secrets.SF_PASSWORD }}
       run: mvn clean test -DsuiteXmlFile='src/test/resources/CrossBrowser.xml' -Duser=$USER -Dpassword=$PASSWORD
 
