@@ -19,8 +19,8 @@ jobs:
 
     runs-on: windows-latest
     env:
-      USER: ${{secrets.SF_USER}}
-      PASSWORD: ${{secrets.SF_PASSWORD}}
+      USER: ${{ secrets.SF_USER }}
+      PASSWORD: ${{ secrets.SF_PASSWORD }}
     steps:
     - name: Checkout
       uses: actions/checkout@v4
