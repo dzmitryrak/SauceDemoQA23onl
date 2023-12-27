@@ -33,10 +33,12 @@ jobs:
         browser: opera
         version: latest
     - name: Run Tests Chrome
-      run: mvn clean test
-    - name: Run Tests All Browsers
+      run: mvn clean test -Duser=$USER -Dpassword=$PASSWORD
       env:
         USER: ${{ secrets.SF_USER }}
         PASSWORD: ${{ secrets.SF_PASSWORD }}
-      run: mvn clean test -DsuiteXmlFile='src/test/resources/CrossBrowser.xml' -Duser=$USER -Dpassword=$PASSWORD
-
+    - name: Run Tests All Browsers
+      run: mvn clean test -Duser=$USER -Dpassword=$PASSWORD -DsuiteXmlFile='src/test/resources/CrossBrowser.xml'
+      env:
+        USER: ${{ secrets.SF_USER }}
+        PASSWORD: ${{ secrets.SF_PASSWORD }}
