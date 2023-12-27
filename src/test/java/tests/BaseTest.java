@@ -24,6 +24,8 @@ public abstract class BaseTest {
     LoginPage loginPage;
     ProductsPage productsPage;
     CartPage cartPage;
+    String user;
+    String password;
 
     @Parameters({"browser"})
     @BeforeMethod(description = "Настройка браузера")
@@ -52,9 +54,9 @@ public abstract class BaseTest {
         productsPage = new ProductsPage(driver);
         cartPage = new CartPage(driver);
 
-        String user = System.getProperty("user", PropertyReader.getProperty("sf.user"));
+        user = System.getProperty("user", PropertyReader.getProperty("sf.user"));
         System.out.println(user);
-        String password = System.getProperty("password", PropertyReader.getProperty("sf.password"));
+        password = System.getProperty("password", PropertyReader.getProperty("sf.password"));
         System.out.println(password);
     }
 

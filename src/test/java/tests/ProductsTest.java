@@ -11,7 +11,7 @@ public class ProductsTest extends BaseTest {
     @Test(description = "Должна быть возможность купить продукт")
     public void buyProduct() {
         loginPage.open();
-        loginPage.login("performance_glitch_user", "secret_sauce");
+        loginPage.login(user, password);
         productsPage.
                 addToCart("Sauce Labs Backpack").
                 openCart().
